@@ -1,0 +1,9 @@
+<h1>Add an accomodation</h1>
+<%= simple_form_for(@accomodation) do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :address %>
+<%= f.input :nb_of_guests %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
+<%= f.submit %>
+<% end %>
