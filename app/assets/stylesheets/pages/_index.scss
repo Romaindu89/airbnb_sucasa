@@ -1,2 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+
+/* Custom designs */
+@import url(components/banner.css);
+@import url(components/buttons.css);
+@import url(components/cards.css);
+@import url(components/searchbar.css);
+@import url(components/footer.css);
+@import url(components/navbar.css);
