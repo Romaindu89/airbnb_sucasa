@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @accomodation.title %></h1>
+  <h3><%= @accomodation.address %></h3>
+  <h3><%= @accomodation.nb_of_guests %></h3>
+  <div>
+      <% @accomodation.photos.each do |photo| %>
+      <div>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <% end %>
+  </div>
+
+  <div>
+    <%= @accomodation.description %>
+  </div>
+</div>
