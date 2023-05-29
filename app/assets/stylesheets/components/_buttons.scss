@@ -6,8 +6,17 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  position: absolute;
+  display: flex;
+  right: 0;
+  width: 100%;
+  max-width: 180px;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-ghost:hover {
   opacity: 1;
+  background-color: rgb(237, 237, 237);
 }
