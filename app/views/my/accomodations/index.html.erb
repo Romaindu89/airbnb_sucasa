@@ -2,8 +2,9 @@
 <div class="container">
   <% @accomodations.each do |accomodation| %>
   <div class="card">
-  <h3><%= accomodation.title %></h3>
-  <p><%= accomodation.address %></p>
+    <h3><%= accomodation.title %></h3>
+    <p><%= accomodation.address %></p>
+    <%= link_to "See more", accomodation_path(accomodation) %>
   </div>
   <% end %>
 </div>
