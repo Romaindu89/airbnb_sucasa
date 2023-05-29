@@ -6,18 +6,6 @@ module My
 
     def new
       @accomodation = Accomodation.new
-      @user = current_user
-    end
-
-    def create
-      raise
-      @accomodation = Accomodation.new(params_accomodations)
-      @accomodation.user = current_user
-      if @accomodation.save
-        redirect_to accomodation_path(@accomodation)
-      else
-        render :new, status: :unprocessable_entity
-      end
     end
 
     private
