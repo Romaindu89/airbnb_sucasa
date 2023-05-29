@@ -1,0 +1,10 @@
+<h1>All Accomodations</h1>
+
+<div class="container">
+  <% @accomodations.each do |accomodation| %>
+  <div class="card">
+  <h3><%= accomodation.title %></h3>
+  <p><%= accomodation.address %></p>
+  </div>
+  <% end %>
+</div>
