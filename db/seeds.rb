@@ -42,3 +42,33 @@ end
 
 puts '10 fake users created !'
 puts '10 fake accommodations created ! '
+puts 'creating 1 super fake accommodation (several coherent pictures) ...'
+new_user = User.new(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: '123456'
+)
+new_user.save!
+super_picture1 = "https://i.pinimg.com/originals/72/5e/d6/725ed67a503311cfa08ea07fc3835981.jpg"
+super_picture2 = "https://media.architecturaldigest.com/photos/5d2f3540dea3bc0008636368/16:9/w_2580,c_limit/After-Photo-7.jpg"
+super_picture3 = "https://cdn.trendir.com/wp-content/uploads/old/archives/2015/12/07/1-kitchen-design-lofts-3-urban-ideas-snaidero.jpg"
+super_picture4 = "https://homedesignlover.com/wp-content/uploads/2016/04/4-loft-loft.jpg"
+super_picture5 = "https://www.interiordesire.net/wp-content/uploads/2017/03/1-neutral.jpg"
+super_picture6 = "https://i.pinimg.com/736x/eb/31/5a/eb315a8e9b6c1a973b3ce32c320bef54.jpg"
+super_pictures = [super_picture1, super_picture2, super_picture3, super_picture4, super_picture5, super_picture6]
+new_acco = Accommodation.new(
+  title: Faker::Space.star,
+  description: Faker::Lorem.paragraphs,
+  address: Faker::Address.country,
+  nb_of_guests: rand(1..15),
+  user_id: new_user.id,
+  price_per_night: rand(50..500)
+)
+super_pictures.each do |photo|
+  file = URI.open(photo)
+  new_acco.photos.attach(io: file, filename: "living_room.png", content_type: "image/jpg")
+end
+new_acco.save!
+
+puts 'super fake accommodation created !'
