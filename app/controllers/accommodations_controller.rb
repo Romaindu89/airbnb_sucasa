@@ -5,16 +5,35 @@ class AccommodationsController < ApplicationController
 
   def show
     @accommodation = Accommodation.find(params[:id])
+    authorize @accommodation
   end
 
   def create
     @accommodation = Accommodation.new(params_accommodations)
     @accommodation.user = current_user
+    authorize @accommodation
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+    @accommodation = Accommodation.find(params[:id])
+    authorize @accommodation
+    if @accommodation.update(params_accommodations)
+      redirect_to my_accommodations_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @accommodation = Accommodation.find(params[:id])
+    authorize @accommodation
+    @accommodation.destroy
+    redirect_to my_accommodations_path, status: :see_other
   end
 
   private

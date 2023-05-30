@@ -6,6 +6,12 @@ module My
 
     def new
       @accommodation = Accommodation.new
+      authorize @accommodation
+    end
+
+    def edit
+      @accommodation = Accommodation.find(params[:id])
+      authorize @accommodation
     end
 
     private

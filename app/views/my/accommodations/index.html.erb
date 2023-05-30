@@ -5,6 +5,10 @@
     <h3><%= accommodation.title %></h3>
     <p><%= accommodation.address %></p>
     <%= link_to "See more", accommodation_path(accommodation) %>
+    <%= link_to "Edit", edit_my_accommodation_path(accommodation) %>
+    <%= link_to "Delete",
+      accommodation_path(accommodation),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
   <% end %>
 </div>
