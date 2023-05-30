@@ -1,21 +1,43 @@
 <%= render 'components/navbar' %>
+
+
 <div class="container-pp">
   <div class="container">
-    <h1><%= @accommodation.title %></h1>
-    <h3><%= @accommodation.address %></h3>
-    <h3><%= @accommodation.nb_of_guests %></h3>
-    <div>
-        <% @accommodation.photos.each do |photo| %>
-        <div>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        </div>
-        <% end %>
-    </div>
+    <h4><%= @accommodation.title %></h4>
+    <h6><%= @accommodation.address %></h6>
 
-    <div>
+    <div class="photos-accommodation-index">
+      <div class="main-photo">
+        <%= cl_image_tag @accommodation.photos.first.key, height: 610, width: 810, crop: :fill, class: "image-clickable" %>
+      </div>
+
+      <div class="secondary-photos">
+        <% @accommodation.photos[1..-1].each do |photo| %>
+          <div class="secondary-photo">
+            <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "image-clickable" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="pp-details">
+      <p><%= @accommodation.nb_of_guests %> guests</p>
       <%= @accommodation.description %>
     </div>
   </div>
+  <div class="btn-pp">
+    <%= link_to "Book now", "/accommodations", class: "btn btn-ghost" %>
+  </div>
+  <div class="reco-block">
+    <div class="separator"></div>
+    <div>
+      <h5>All Somya's accommodations</h5>
+    </div>
+    <div>
+      <h5>Other accomodations available at the same dates</h5>
+    </div>
+  </div>
 </div>
+
+
 
 <%= render 'components/footer' %>
