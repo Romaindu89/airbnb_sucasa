@@ -23,6 +23,7 @@ gem "turbo-rails"
 gem "devise"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+gem "pundit"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
