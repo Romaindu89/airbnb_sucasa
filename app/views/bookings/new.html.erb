@@ -1,0 +1,6 @@
+<%= simple_form_for([@accommodation, @booking]) do |f| %>
+  <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
+  <%= f.input :check_in_date %>
+  <%= f.input :check_out_date %>
+  <%= f.submit %>
+<% end %>
