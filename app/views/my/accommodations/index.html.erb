@@ -1,10 +1,13 @@
+<%= render 'components/navbar' %>
 <h1>Your Accommodations</h1>
 <div class="container">
   <% @accommodations.each do |accommodation| %>
   <div class="card">
-    <h3><%= accommodation.title %></h3>
+    <h2><%= accommodation.title %></h2>
     <p><%= accommodation.address %></p>
     <%= link_to "See more", accommodation_path(accommodation) %>
   </div>
   <% end %>
 </div>
+
+<%= render 'components/footer' %>

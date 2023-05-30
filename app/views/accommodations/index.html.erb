@@ -1,10 +1,16 @@
-<h1>All Accommodations</h1>
+<%= render 'components/navbar' %>
+
+<div class="search_lp">
+    <h5><strong>Find your next destinations</strong></h5>
+    <%# search %>
+    <%= render 'components/search' %>
+</div>
 
 <div class="container">
-  <% @accommodations.each do |accommodation| %>
-  <div class="card">
-  <h3><%= accommodation.title %></h3>
-  <p><%= accommodation.address %></p>
-  </div>
-  <% end %>
+<div class="container-all-accommodations">
+  <h4>All Accommodations</h4>
+  <p>Discover all our accommodations <em>from Paris to Tokyo.</em></p>
+  <%= render 'components/card' %>
 </div>
+</div>
+<%= render 'components/footer' %>
