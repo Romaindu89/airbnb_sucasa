@@ -15,7 +15,7 @@ puts '20 fake users created !'
 puts 'creating 20 fake accommodations ...'
 u_id = 1
 20.times do
-  new_acco = Accomodation.new(
+  new_acco = Accommodation.new(
     title: Faker::Space.star,
     description: Faker::Lorem.paragraphs,
     address: Faker::Address.country,
