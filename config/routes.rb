@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     resources :accommodations, only: %i[index new]
   end
 
-  resources :accommodations, only: %i[index show create]
+  resources :accommodations, only: %i[index show create] do
+    resources :bookings, only: %i[new create]
+  end
+
+  # resources :bookings, only: :create
 end
