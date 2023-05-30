@@ -1,18 +1,20 @@
-<%= render 'components/navbar' %>
+<div class="wrapper">
+  <%= render 'components/navbar' %>
 
-  <div class="container-accommodation-form">
-    <div class="accommodation-form">
-      <div class="accommodation-text">
-        <h2>Book it!</h2>
-        <h6>Start the experience and book <em>your dates.</em></h6>
+    <div class="container-accommodation-form">
+      <div class="accommodation-form">
+        <div class="accommodation-text">
+          <h2>Book it!</h2>
+          <h6>Start the experience and book <em>your dates.</em></h6>
+        </div>
+        <%= simple_form_for([@accommodation, @booking]) do |f| %>
+          <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
+          <%= f.input :check_in_date %>
+          <%= f.input :check_out_date %>
+          <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
+          <%= f.submit %>
+        <% end %>
       </div>
-      <%= simple_form_for([@accommodation, @booking]) do |f| %>
-        <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
-        <%= f.input :check_in_date %>
-        <%= f.input :check_out_date %>
-        <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
-        <%= f.submit %>
-      <% end %>
     </div>
-  </div>
-<%= render 'components/footer' %>
+  <%= render 'components/footer' %>
+</div>

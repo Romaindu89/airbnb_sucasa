@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <%= render 'components/navbar' %>
+  <h2>Your booking is validated !</h2>
+  <%= @booking.check_in_date %>
+  <%= @booking.check_out_date %>
+  <%= @booking.nb_of_guests %>
+  <%= @booking.total_price %>
+  <%= render 'components/footer' %>
+</div>
