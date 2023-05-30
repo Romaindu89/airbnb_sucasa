@@ -1,18 +1,20 @@
 <%= render 'components/navbar' %>
-<div class="container">
-  <h1><%= @accommodation.title %></h1>
-  <h3><%= @accommodation.address %></h3>
-  <h3><%= @accommodation.nb_of_guests %></h3>
-  <div>
-      <% @accommodation.photos.each do |photo| %>
-      <div>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
-      <% end %>
-  </div>
+<div class="container-pp">
+  <div class="container">
+    <h1><%= @accommodation.title %></h1>
+    <h3><%= @accommodation.address %></h3>
+    <h3><%= @accommodation.nb_of_guests %></h3>
+    <div>
+        <% @accommodation.photos.each do |photo| %>
+        <div>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+        <% end %>
+    </div>
 
-  <div>
-    <%= @accommodation.description %>
+    <div>
+      <%= @accommodation.description %>
+    </div>
   </div>
 </div>
 

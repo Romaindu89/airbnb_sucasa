@@ -1,17 +1,32 @@
 <%= render 'components/navbar' %>
-<h1>Your Accommodations</h1>
 <div class="container">
+<h4>Your Accommodations</h4>
+
+<div class="cards-container">
   <% @accommodations.each do |accommodation| %>
-  <div class="card">
-    <h2><%= accommodation.title %></h2>
-    <p><%= accommodation.address %></p>
-    <%= link_to "See more", accommodation_path(accommodation) %>
-    <%= link_to "Edit", edit_my_accommodation_path(accommodation) %>
-    <%= link_to "Delete",
-      accommodation_path(accommodation),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <div class="card-trip">
+      <div>
+        <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= accommodation.title %></h2>
+          <p><%= accommodation.address %></p>
+        </div>
+        <div class="price">
+          <span><%= rand(50..150) %></span><h2>$</h2>
+        </div>
+      </div>
+      <div class="link-my-accommodations">
+        <%= link_to "See more", accommodation_path(accommodation) %>
+        <%= link_to "Edit", edit_my_accommodation_path(accommodation) %>
+        <%= link_to "Delete",
+        accommodation_path(accommodation),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
   </div>
   <% end %>
+</div>
 </div>
 
 <%= render 'components/footer' %>
