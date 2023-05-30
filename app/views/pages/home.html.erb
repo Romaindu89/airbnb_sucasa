@@ -3,7 +3,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-sucasa">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "sucasa-logo2.png", class: "logo-img" %>
+      <%= cl_image_tag "gyrvu9bx03ilsknsbbr9", class: "logo-img" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "Amar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag "l1uxo92q0uhx5muzlen7", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -69,7 +69,7 @@
   <%# card %>
 
   <div class="card-trip">
-    <%= image_tag "appart-somya.jpg", alt: "Card Image" %>
+    <%= cl_image_tag "iv9myaiwtpksfavfs2fa", alt: "Card Image" %>
     <div class="card-trip-infos">
       <div>
         <h2>Prénom | Métier</h2>
@@ -79,7 +79,7 @@
         <h2>Prix</h2>
       </div>
       <div class="card-trip-user">
-        <%= image_tag "Somya.jpg", alt: "User Avatar", class: "avatar-bordered" %>
+        <%= cl_image_tag "qd2qjvq7dgjakj1qljbi", alt: "User Avatar", class: "avatar-bordered" %>
       </div>
     </div>
     <div class="btn-ghost">
