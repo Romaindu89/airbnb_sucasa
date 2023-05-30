@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params_booking)
     @booking.user = current_user
     @accommodation = Accommodation.find(params[:booking][:accommodation_id])
+    @booking.total_price = (@booking.check_out_date - @booking.check_in_date) * @accommodation.price_per_night
     if @booking.save
       redirect_to accommodations_path
     else

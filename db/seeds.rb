@@ -20,7 +20,8 @@ u_id = 1
     description: Faker::Lorem.paragraphs,
     address: Faker::Address.country,
     nb_of_guests: rand(1..15),
-    user_id: u_id
+    user_id: u_id,
+    price_per_night: rand(50..500)
   )
   u_id += 1
   new_acco.save!
