@@ -1,0 +1,21 @@
+.link-my-accommodations a {
+  text-decoration: none;
+  color: rgb(128, 128, 128);
+  margin: 10px;
+  font-size: smaller;
+}
+
+.link-my-accommodations a:hover {
+  color: rgb(24, 24, 24);
+}
+
+.link-my-accommodations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h4 {
+  padding-top: 30px;
+  color: #747474;;
+}

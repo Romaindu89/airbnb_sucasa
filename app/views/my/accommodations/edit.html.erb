@@ -1,9 +1,19 @@
-<h1>Edit your accommodation</h1>
-<%= simple_form_for(@accommodation) do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :address %>
-<%= f.input :nb_of_guests %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit %>
-<% end %>
+<%= render 'components/navbar' %>
+
+  <div class="container-accommodation-form">
+    <div class="accommodation-form">
+      <div class="accommodation-text">
+        <h2>Edit your accommodations</h2>
+        <h6>Do your changes <em>and publish!</em></h6>
+      </div>
+      <%= simple_form_for(@accommodation) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :nb_of_guests %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+<%= render 'components/footer' %>
