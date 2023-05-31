@@ -89,3 +89,14 @@ h2 {
 .price span {
   margin-right: 5px;
 }
+
+.cards-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.cards-container a:hover {
+  color: black;
+  transition: 0.4s;
+  transform: scale3d(1.007, 1.007, 1)
+}
