@@ -33,7 +33,7 @@ counter = 0
   new_acco = Accommodation.new(
     title: Faker::Space.star,
     description: Faker::Lorem.paragraphs,
-    address: Faker::Address.country,
+    address: "Shibuya, Tokyo",
     nb_of_guests: rand(1..15),
     user_id: new_user.id,
     price_per_night: rand(50..500)
@@ -64,7 +64,7 @@ super_pictures = [super_picture1, super_picture2, super_picture3, super_picture4
 new_acco = Accommodation.new(
   title: Faker::Space.star,
   description: Faker::Lorem.paragraphs,
-  address: Faker::Address.country,
+  address: "Shibuya, Tokyo",
   nb_of_guests: rand(1..15),
   user_id: new_user.id,
   price_per_night: rand(50..500)
