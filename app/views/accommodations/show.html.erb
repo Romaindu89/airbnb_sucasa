@@ -21,19 +21,20 @@
     </div>
     <div class="pp-details">
         <div class="user-bio">
-        <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp" %>
-        <p><%= @accommodation.user.bio %></p>
+          <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp" %>
+          <p><%= @accommodation.user.bio %></p>
         </div>
+        <div class="separator">
+        </div>
+        <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
         <div class="separator"></div>
-    <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
-    <div class="separator"></div>
-    <div class="acc-desc">
-      <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
-      <p><%= @accommodation.description %></p>
+          <div class="acc-desc">
+            <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
+            <p><%= @accommodation.description %></p>
+          </div>
     </div>
+        <div class="separator"></div>
     </div>
-    <div class="separator"></div>
-  </div>
 
   <div class="btn-pp">
     <%= link_to "Book now", new_accommodation_booking_path(@accommodation), class: "btn btn-ghost" %>
