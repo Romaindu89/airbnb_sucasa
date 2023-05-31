@@ -9,6 +9,7 @@ class AccommodationsController < ApplicationController
   def show
     @accommodation = Accommodation.find(params[:id])
     authorize @accommodation
+    @accommodations = Accommodation.all.sample(3)
   end
 
   def create
