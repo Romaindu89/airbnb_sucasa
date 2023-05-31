@@ -20,27 +20,25 @@
       </div>
     </div>
     <div class="pp-details">
-        <div class="user-bio">
-        <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp" %>
-        <p><%= @accommodation.user.bio %></p>
-        </div>
-        <div class="separator"></div>
-          <% if @accommodation.user.bio == nil%>
-            <p><%= @accommodation.user.first_name %> does not have a bio yet !</p>
-          <% else %>
-            <p><%= @accommodation.user.bio %></p>
-          <% end %>
-          <% if @accommodation.user.photo.key == nil%>
-            <%= image_tag "avatar_default.jpg", height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill  %>
-          <% end %>
-    <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
-    <div class="separator"></div>
-    <div class="acc-desc">
-      <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
-      <p><%= @accommodation.description %></p>
-    </div>
+      <div class="user-bio">
+        <% if @accommodation.user.photo.key == nil%>
+          <%= image_tag "avatar_default.jpg", height: 50, width: 50, crop: :fill, class: "avatar-pp dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp"  %>
+        <% end %>
+        <% if @accommodation.user.bio == nil%>
+          <p><%= @accommodation.user.first_name %> does not have a bio yet !</p>
+        <% else %>
+          <p><%= @accommodation.user.bio %></p>
+        <% end %>
+      </div>
+      <div class="separator"></div>
+      <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
+      <div class="separator"></div>
+      <div class="acc-desc">
+        <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
+        <p><%= @accommodation.description %></p>
+      </div>
     </div>
     <div class="separator"></div>
   </div>
@@ -74,6 +72,7 @@
     <div class="btn-ghost" id="see-more-btn-home">
       <%= link_to "See more", "/accommodations", class: "btn btn-ghost"%>
     </div>
+  </div>
 </div>
 
 
