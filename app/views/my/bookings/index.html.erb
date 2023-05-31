@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <%= render 'components/navbar' %>
+  <% @bookings.each do |booking| %>
+    <%= booking.total_price %>
+    <%= booking.accommodation.title %>
+  <% end %>
+  <%= render 'components/footer' %>
+</div>
