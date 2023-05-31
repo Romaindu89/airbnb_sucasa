@@ -7,3 +7,27 @@ body {
 .main-container {
   margin: 40px;
 }
+
+element.style {
+}
+@media (min-width: 768px)
+{
+    display: inline-block;
+}
+.items-center {
+    align-items: center;
+}
+.inline-flex {
+    display: inline-flex;
+}
+.my-4 {
+    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
+}
+*, :after, :before {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

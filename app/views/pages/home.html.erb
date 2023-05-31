@@ -10,25 +10,28 @@
   </div>
 
   <%# card %>
-
-  <div class="card-trip">
-    <%= cl_image_tag "iv9myaiwtpksfavfs2fa", alt: "Card Image" %>
-    <div class="card-trip-infos">
-      <div>
-        <h2>Prénom | Métier</h2>
-        <p>Ville</p>
+  <div class="container">
+    <div class="cards-container">
+      <% @accommodations.each do |accommodation| %>
+      <div class="card-trip">
+        <div>
+          <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
+        </div>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= accommodation.title %></h2>
+            <p><%= accommodation.address %></p>
+          </div>
+          <div class="price">
+            <span><%= rand(50..150) %></span><h2>$</h2>
+          </div>
+        </div>
       </div>
-      <div>
-        <h2>Prix</h2>
-      </div>
-      <div class="card-trip-user">
-        <%= cl_image_tag "qd2qjvq7dgjakj1qljbi", alt: "User Avatar", class: "avatar-bordered" %>
-      </div>
+      <% end %>
     </div>
-    <div class="btn-ghost">
-      <%= link_to "See more", "/accommodations", class: "btn btn-ghost" %>
+    <div class="btn-ghost" id="see-more-btn-home">
+      <%= link_to "See more", "/accommodations", class: "btn btn-ghost"%>
     </div>
   </div>
 </div>
-
 <%= render 'components/footer' %>
