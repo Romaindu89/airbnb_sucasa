@@ -9,8 +9,8 @@
         </div>
         <%= simple_form_for([@accommodation, @booking]) do |f| %>
           <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
-          <%= f.input :check_in_date %>
-          <%= f.input :check_out_date %>
+          <%= f.input :check_in_date, order: [:day, :month, :year] %>
+          <%= f.input :check_out_date, order: [:day, :month, :year] %>
           <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
           <%= f.submit %>
         <% end %>
