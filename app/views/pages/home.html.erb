@@ -13,20 +13,22 @@
   <div class="container">
     <div class="cards-container">
       <% @accommodations.each do |accommodation| %>
-      <div class="card-trip">
-        <div>
-          <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
-        </div>
-        <div class="card-trip-infos">
+      <%= link_to accommodation do %>
+        <div class="card-trip">
           <div>
-            <h2><%= accommodation.title %></h2>
-            <p><%= accommodation.address %></p>
+            <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
           </div>
-          <div class="price">
-            <span><%= rand(50..150) %></span><h2>$</h2>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= accommodation.title %></h2>
+              <p><%= accommodation.address %></p>
+            </div>
+            <div class="price">
+              <span><%= accommodation.price_per_night %></span><h2>$</h2>
+            </div>
           </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
     </div>
     <div class="btn-ghost" id="see-more-btn-home">
