@@ -14,17 +14,21 @@ picture7 = "https://www.vrbo.com/vacation-ideas/wp-content/uploads/0Bu5ExcClizee
 picture8 = "https://cdn.apartmenttherapy.info/image/upload/v1554209861/at/house%20tours%20stock%20archive/312b3933109935c5f33f6b8ec4a271669eb2d78a.jpg"
 picture9 = "https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/43/ZG_BrandGTM_0321_GettyImages-528689860-RT-ed6165.jpg"
 picture10 = "https://tatinyhouse.com/wp-content/uploads/2022/10/13-Sunshine-03.jpg"
+picture11 = "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 pictures = [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10]
 counter = 0
 
-10.times do
+2.times do
   new_user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password: '123456'
+    password: '123456',
+    bio: "Hello there! I’m your friendly and enthusiastic host for your upcoming stay in this beautiful city. As a born and raised local, I know all the hidden gems and insider tips to make your visit truly memorable. I have a passion for hosting and creating unique experiences for my guests. I take great pride in providing a comfortable and welcoming atmosphere, ensuring that you feel right at home during your stay. Whether you’re here for a short getaway or an extended vacation, I’ll go above and beyond to make sure your time here exceeds your expectations."
   )
+  file = URI.open(picture11)
+  new_user.photo.attach(io: file, filename: "avatar.png", content_type: "image/jpg")
   new_user.save!
   new_acco = Accommodation.new(
     title: Faker::Space.star,
@@ -47,7 +51,8 @@ new_user = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
-  password: '123456'
+  password: '123456',
+  bio: "Hello there! I’m your friendly and enthusiastic host for your upcoming stay in this beautiful city. As a born and raised local, I know all the hidden gems and insider tips to make your visit truly memorable. I have a passion for hosting and creating unique experiences for my guests. I take great pride in providing a comfortable and welcoming atmosphere, ensuring that you feel right at home during your stay. Whether you’re here for a short getaway or an extended vacation, I’ll go above and beyond to make sure your time here exceeds your expectations."
 )
 new_user.save!
 super_picture1 = "https://i.pinimg.com/originals/72/5e/d6/725ed67a503311cfa08ea07fc3835981.jpg"
