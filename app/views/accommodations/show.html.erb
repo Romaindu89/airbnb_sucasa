@@ -21,6 +21,8 @@
     </div>
     <div class="pp-details">
         <div class="separator"></div>
+          <p><%= @accommodation.user.bio %></p>
+          <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill  %>
     <h6> <i class="fa-regular fa-calendar"></i> Free cancelation until 1 week before your trip!</h6>
     <div class="separator"></div>
       <p><%= @accommodation.description %></p>
