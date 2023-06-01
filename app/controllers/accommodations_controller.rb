@@ -37,7 +37,7 @@ class AccommodationsController < ApplicationController
     if @accommodation.update(params_accommodations)
       redirect_to my_accommodations_path
     else
-      render :edit, status: :unprocessable_entity
+      render "my/accommodations/edit", status: :unprocessable_entity
     end
   end
 
