@@ -85,7 +85,7 @@
 
 .reco-block {
   margin-top: 10%;
-  margin-left: 7%;
+  margin-left: 0%;
 }
 
 .separator {
@@ -112,11 +112,11 @@ margin-left: 5%;
 }
 
 .acc-desc {
-  margin-left: 5%;
+  margin-left: 6%;
 
 }
 
-.container h4, .container h3{
+.container h4, .container-first-infos h1{
   font-weight: bolder;
   color: black;
 }
@@ -144,33 +144,139 @@ margin-left: 5%;
 
 .validation-infos {
   background-color: white;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-top: 3%;
+  margin-left: 200px;
+  margin-right: 200px;
   padding: 3%;
-  border-radius: 30px;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  border-radius: 0px;
+  padding-bottom: 0%;
 }
 
-.validation-infos h2 {
+.validation-infos h1 {
   font-weight: bold;
   margin-bottom: 6%;
   margin-left: 12%;
 }
 
 .container-main-infos h6 {
-margin-left: 19%;
+margin-left: 13%;
+color: rgb(116, 116, 116);
+font-weight: lighter;
 }
 
-i {
-  color: rgb(0, 0, 0);
-  margin-right: 2%;
+.container-main-infos {
+  margin-top: 40px;
+}
+
+.container-main-infos i {
+  color: #ffaa64;
+  margin-right: 6%;
+}
+
+.container-main-infos .btn-pp {
+  color: white;
+  background-color: #ffaa64;
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  position:absolute;
+  display: flex;
+  width: 100%;
+  max-width: 180px;
+  height: 50px;
+  left: 29%;
+  transform: translateX(-50%);
+  margin-top: 35px;
+}
+
+.container-main-infos .btn-pp:hover {
+  opacity: 1;
+  background-color: #ffaa64;
 }
 
 .validation-infos {
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px 2px #d0d0d0;
   background-size: 20px 20px;
   background-position: 0 0, 0 0, 10px 10px, -10px -10px;
+  margin-bottom: 25px;
+}
+
+.reco-block .cards-container {
+  display: flex;
+  margin-right: 20px;
+  padding-right: 80px;
+  padding-left: 95px;
+}
+
+.reco-block-container {
+  background-color: white;
+}
+
+.reco-block h5 {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 65px;
+  color: black;
+  padding-left: 95px;
+}
+
+
+.reco-block{
+  margin-top: 12%;
+}
+
+.reco-block .card-trip {
+  margin: 0;
+  margin: 1px;
+  max-width: 300px;
+  border-radius: 20px;
+  margin-bottom: 100px;
+}
+
+.container-pp {
+  margin-top: 3%;
+}
+
+.pp-details i {
+  color: #ffaa64;
+}
+
+.container-first-infos {
+  margin-bottom: 35px;
+}
+
+.reco-block .subtitle {
+  font-size: 15px;
+  margin-left: 10px;
+  font-weight: lighter;
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.text-container {
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+.image-container {
+  flex-shrink: 0;
+  margin-right: 20px;
+  margin-bottom: 110px;
+}
+
+.container-flex-congrats .container {
+  margin-left: 15px;
+  margin-right: 60px;
+}
+
+.container-main-infos .btn-ghost {
+  color: white;
 }

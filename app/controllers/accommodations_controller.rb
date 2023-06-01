@@ -17,7 +17,7 @@ class AccommodationsController < ApplicationController
   def show
     @accommodation = Accommodation.find(params[:id])
     authorize @accommodation
-    @accommodations = Accommodation.all.sample(3)
+    @accommodations = Accommodation.all.sample(4)
   end
 
   def create
@@ -27,7 +27,7 @@ class AccommodationsController < ApplicationController
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
-      render :new, status: :unprocessable_entity
+      render new_my_accommodation_path, status: :unprocessable_entity
     end
   end
 
