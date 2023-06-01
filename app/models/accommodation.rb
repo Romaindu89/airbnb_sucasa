@@ -7,9 +7,7 @@ class Accommodation < ApplicationRecord
 
   validates :address, presence: true
 
-  validates :price_per_night, presence: true
-  validates :price_per_night, length: { minimum: 1 }
+  validates :price_per_night, presence: true, numericality: { greater_than_or_equal_to: 1 }
 
-  validates :nb_of_guests, presence: true
-  validates :nb_of_guests, length: { minimum: 1 }
+  validates :nb_of_guests, presence: true, numericality: { greater_than_or_equal_to: 1 }
 end
