@@ -25,7 +25,7 @@ module My
       if @booking.save
         redirect_to my_booking_path(@booking)
       else
-        render :new, status: :unprocessable_entity
+        render "trip/bookings/new", status: :unprocessable_entity
       end
     end
 
@@ -34,6 +34,9 @@ module My
       @booking.user = current_user
       @accommodation = Accommodation.find(params[:booking][:accommodation_id])
       @booking.update(params_booking)
+      check_in_date, check_out_date = params[:booking][:check_in_date].split(' to ')
+      @booking.check_in_date = Date.parse(check_in_date)
+      @booking.check_out_date = Date.parse(check_out_date)
       new_total_price = (@booking.check_out_date - @booking.check_in_date) * @accommodation.price_per_night
       if @booking.update(total_price: new_total_price)
         redirect_to my_bookings_path
