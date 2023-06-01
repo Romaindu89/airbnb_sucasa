@@ -7,7 +7,7 @@
           <h2>Book it!</h2>
           <h6>Start the experience and book <em>your dates.</em></h6>
         </div>
-        <%= simple_form_for([@accommodation, @booking]) do |f| %>
+        <%= simple_form_for(@booking, as: :booking, method: :post, url: my_bookings_path) do |f| %>
           <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
           <%= f.input :check_in_date, order: [:day, :month, :year] %>
           <%= f.input :check_out_date, order: [:day, :month, :year] %>

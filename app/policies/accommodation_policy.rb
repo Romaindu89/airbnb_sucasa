@@ -5,7 +5,7 @@ class AccommodationPolicy < ApplicationPolicy
   #     scope.all
   #   end
 
-    def index
+    def index?
       true
     end
 
@@ -18,11 +18,13 @@ class AccommodationPolicy < ApplicationPolicy
     end
 
     def update?
-      record.user == user
+      true
+      # record.user == user
     end
 
     def destroy?
-      record.user == user
+      true
+      # record.user == user
     end
   # end
 end
