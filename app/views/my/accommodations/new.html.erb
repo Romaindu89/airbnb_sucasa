@@ -10,8 +10,8 @@
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :address %>
-        <%= f.input :price_per_night %>
-        <%= f.input :nb_of_guests, label: "Number of guests" %>
+        <%= f.input :price_per_night, error: 'Price per night can\'t be blank and can\'t be negative!' %>
+        <%= f.input :nb_of_guests, label: "Number of guests", error: 'Number of guests can\'t be blank and can\'t be negative !' %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit %>
       <% end %>
