@@ -1,6 +1,5 @@
 module My
   class AccommodationsController < ApplicationController
-
     def index
       @accommodations = Accommodation.where(user: current_user)
     end

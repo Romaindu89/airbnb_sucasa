@@ -1,0 +1,6 @@
+<%= link_to accommodation_path(accommodation) do %>
+    <h3><%= accommodation.title %></h2>
+    <h6> <i class="fa-solid fa-person"></i> <%= accommodation.nb_of_guests %> people </h6>
+    <h6><i class="fa-solid fa-dollar-sign"></i> <%= accommodation.price_per_night %>$</h6>
+    <%= cl_image_tag accommodation.photos[0].key, height: 100, width: 200, crop: :fill %>
+<% end %>

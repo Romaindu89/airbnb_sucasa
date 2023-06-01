@@ -28,8 +28,7 @@ legend ~ div.form-check:first-of-type {
 }
 
 
-.accommodation-form input:focus,
- {
+.accommodation-form input:focus{
   border: 3px solid rgb(158, 191, 207);
   opacity: 0.6;
   outline: none !important;
@@ -72,8 +71,7 @@ legend ~ div.form-check:first-of-type {
   border-radius: 12px;
 }
 
-.accommodation-form input[type="text"]:hover,
- {
+.accommodation-form input[type="text"]:hover{
   border: 3px solid rgb(158, 191, 207);
   opacity: 0.6;
   outline: none !important;
