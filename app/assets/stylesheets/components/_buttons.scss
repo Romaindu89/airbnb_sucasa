@@ -29,7 +29,7 @@
 
 .container-pp .btn-pp {
   color: #ffffff;
-  background-color: rgb(158, 191, 207);;
+  background-color: #ffaa64;
   padding: 8px 24px;
   border-radius: 20px;
   font-weight: lighter;
@@ -47,9 +47,13 @@
 
 .btn-pp:hover {
   opacity: 0.6;
-  background-color: rgb(158, 191, 207);
+  background-color: #ffaa64;
 }
 
 .container-pp .btn-ghost {
   color: #ffffff;
+}
+
+.container-pp .btn-pp {
+  margin-bottom: 20%;
 }

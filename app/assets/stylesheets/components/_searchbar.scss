@@ -40,3 +40,10 @@
   color: #000000;
   border-bottom: 0.3px solid rgba(190, 190, 190, 0.6);
 }
+
+.custom-placeholder::placeholder {
+padding-left: 8px;
+font-size: 16px;
+color: #969696;
+font-weight: lighter;
+}
