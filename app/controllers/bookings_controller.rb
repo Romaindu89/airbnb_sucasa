@@ -15,6 +15,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params_booking)
     @booking.user = current_user
     @accommodation = Accommodation.find(params[:booking][:accommodation_id])
+    check_in_date, check_out_date = params[:booking][:check_in_date].split(' to ')
+    @booking.check_in_date = Date.parse(check_in_date)
+    @booking.check_out_date = Date.parse(check_out_date)
     @booking.total_price = (@booking.check_out_date - @booking.check_in_date) * @accommodation.price_per_night
     authorize @booking
     if @booking.save
