@@ -11,7 +11,7 @@
         <%= f.input :description %>
         <%= f.input :address %>
         <%= f.input :price_per_night %>
-        <%= f.input :nb_of_guests %>
+        <%= f.input :nb_of_guests, label: "Number of guests" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit %>
       <% end %>

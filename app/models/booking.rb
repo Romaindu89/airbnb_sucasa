@@ -4,5 +4,5 @@ class Booking < ApplicationRecord
 
   validates :nb_of_guests, presence: true
   validates :check_in_date, presence: true
-  validates :check_out_date, presence: true, comparison: { greater_than: :check_in_date}
+  validates :check_out_date, presence: true, comparison: { greater_than: :check_in_date, message: "cannot be before check in date !"}
 end
