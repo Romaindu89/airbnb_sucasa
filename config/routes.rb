@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :my do
     resources :accommodations, only: %i[index new edit]
-    resources :bookings, only: %i[index]
+    resources :bookings, only: %i[show index create destroy edit update]
   end
 
   resources :accommodations, only: %i[index show create update destroy] do
-    resources :bookings, only: %i[new create]
+    namespace :trip do
+      resources :bookings, only: %i[new]
+    end
   end
-  resources :bookings, only: %i[show]
 end

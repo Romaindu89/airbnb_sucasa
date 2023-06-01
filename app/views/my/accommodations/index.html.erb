@@ -16,11 +16,10 @@
               <p><%= accommodation.address %></p>
             </div>
             <div class="price">
-              <span><%= rand(50..150) %></span><h2>$</h2>
+              <span><%= accommodation.price_per_night %></span><h2>$</h2>
             </div>
           </div>
           <div class="link-my-accommodations">
-            <%= link_to "See more", accommodation_path(accommodation) %>
             <%= link_to "Edit", edit_my_accommodation_path(accommodation) %>
             <%= link_to "Delete",
             accommodation_path(accommodation),

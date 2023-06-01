@@ -1,78 +1,82 @@
 <%= render 'components/navbar' %>
 
+<%# product page %>
 <div class="container">
-<div class="container-pp">
-  <div class="container">
-    <h3><%= @accommodation.title %></h3>
-    <h6><%= @accommodation.address %>  ·  <%= @accommodation.nb_of_guests %> guests</h6>
-
-    <div class="photos-accommodation-index">
-      <div class="main-photo">
-        <%= cl_image_tag @accommodation.photos.first.key, height: 610, width: 810, crop: :fill, class: "image-clickable" %>
+  <div class="container-pp">
+    <div class="container">
+      <div class="container-first-infos">
+        <h1><%= @accommodation.title %></h1>
+        <h5><%= @accommodation.address %>  ·  <%= @accommodation.nb_of_guests %> guests</h5>
       </div>
-
-      <div class="secondary-photos">
-        <% @accommodation.photos[1..-1].each do |photo| %>
-          <div class="secondary-photo">
-            <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "image-clickable" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="pp-details">
-      <div class="user-bio">
-        <% if @accommodation.user.photo.key == nil%>
-          <%= image_tag "avatar_default.jpg", height: 50, width: 50, crop: :fill, class: "avatar-pp dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp"  %>
-        <% end %>
-        <% if @accommodation.user.bio == nil%>
-          <p><%= @accommodation.user.first_name %> does not have a bio yet !</p>
-        <% else %>
-          <p><%= @accommodation.user.bio %></p>
-        <% end %>
-      </div>
-      <div class="separator"></div>
-      <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
-      <div class="separator"></div>
-      <div class="acc-desc">
-        <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
-        <p><%= @accommodation.description %></p>
-      </div>
-    </div>
-
-  <div class="btn-pp">
-    <%= link_to "Book now", new_accommodation_booking_path(@accommodation), class: "btn btn-ghost" %>
-  </div>
-  <div class="reco-block">
-    <div>
-      <h5>Others accommodations</h5>
-    <div class="cards-container">
-      <% @accommodations.each do |accommodation| %>
-      <%= link_to accommodation do %>
-        <div class="card-trip">
-          <div>
-            <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
-          </div>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= accommodation.title %></h2>
-              <p><%= accommodation.address %></p>
-            </div>
-            <div class="price">
-              <span><%= accommodation.price_per_night %></span><h2>$</h2>
-            </div>
-          </div>
+      <div class="photos-accommodation-index">
+        <div class="main-photo">
+          <%= cl_image_tag @accommodation.photos.first.key, height: 610, width: 810, crop: :fill, class: "image-clickable" %>
         </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="btn-ghost" id="see-more-btn-home">
-      <%= link_to "See more", "/accommodations", class: "btn btn-ghost"%>
+        <div class="secondary-photos">
+          <% @accommodation.photos[1..-1].each do |photo| %>
+            <div class="secondary-photo">
+              <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "image-clickable" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="pp-details">
+        <div class="user-bio">
+          <% if @accommodation.user.photo.key == nil%>
+            <%= image_tag "avatar_default.jpg", height: 50, width: 50, crop: :fill, class: "avatar-pp dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= cl_image_tag @accommodation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-pp"  %>
+          <% end %>
+          <% if @accommodation.user.bio == nil%>
+            <p><%= @accommodation.user.first_name %> does not have a bio yet !</p>
+          <% else %>
+            <p><%= @accommodation.user.bio %></p>
+          <% end %>
+        </div>
+        <div class="acc-desc">
+        <div class="separator"></div>
+        <h6> <i class="fa-regular fa-calendar"></i>&nbsp;&nbsp;&nbsp;&nbsp;Free cancelation until 1 week before your trip!</h6>
+        <div class="separator"></div>
+          <h6><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;Where you'll stay</h6>
+          <p><%= @accommodation.description %></p>
+          <div class="separator"></div>
+          <h6><i class="fa-solid fa-dollar-sign"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @accommodation.price_per_night %>$ per night </h6>
+        </div>
+      </div>
+      <%# btn %>
+      <div class="btn-pp">
+        <%= link_to "Book now", new_accommodation_trip_booking_path(@accommodation), class: "btn btn-ghost" %>
+      </div>
     </div>
   </div>
 </div>
-
-
+  <%# reco block %>
+  <div class="reco-block-container">
+    <div class="reco-block">
+      <h5><b>Others accommodations</b> <span class="subtitle"> Checkout our best summer destinations! 🌞</span></h5>
+      <div class="cards-on-pp">
+        <div class="cards-container">
+          <% @accommodations.each do |accommodation| %>
+            <%= link_to accommodation do %>
+              <div class="card-trip">
+                <div class="photos-reco">
+                  <%= cl_image_tag accommodation.photos[0].key, height: 300, width: 400, crop: :fill %>
+                </div>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= accommodation.title %></h2>
+                    <p><%= accommodation.address %></p>
+                  </div>
+                  <div class="price">
+                    <span><%= accommodation.price_per_night %></span><h2>$</h2>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%= render 'components/footer' %>
