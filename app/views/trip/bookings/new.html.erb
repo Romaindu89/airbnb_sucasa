@@ -7,10 +7,10 @@
           <h2>Book it!</h2>
           <h6>Start the experience and book <em>your dates.</em></h6>
         </div>
-        <%= simple_form_for(@booking, as: :booking, method: :post, url: my_bookings_path) do |f| %>
+        <%= simple_form_for(@booking, as: :booking, method: :post, url: my_bookings_path, data: { controller: 'flatpickr' }) do |f| %>
           <%= f.hidden_field :accommodation_id, value: @accommodation.id %>
-          <%= f.input :check_in_date, order: [:day, :month, :year] %>
-          <%= f.input :check_out_date, order: [:day, :month, :year] %>
+          <%= f.input :check_in_date, label: 'Choose your dates !', as: :string, input_html: { data: { flatpickr_target: "checkInDate" } } %>
+          <%= f.hidden_field :check_out_date, as: :string, input_html: { data: { flatpickr_target: "checkOutDate" } } %>
           <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
           <%= f.submit %>
         <% end %>

@@ -19,7 +19,7 @@ class AccommodationsController < ApplicationController
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
-      render :new, status: :unprocessable_entity
+      render new_my_accommodation_path, status: :unprocessable_entity
     end
   end
 
