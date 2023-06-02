@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   namespace :my do
     resources :accommodations, only: %i[index new edit]
     resources :bookings, only: %i[show index create destroy edit update]
+    # modifs
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
+    # modifs
   end
 
   resources :accommodations, only: %i[index show create update destroy] do
@@ -15,4 +20,8 @@ Rails.application.routes.draw do
       resources :bookings, only: %i[new]
     end
   end
+
+  # resources :chatrooms, only: :show do
+  #   resources :messages, only: :create
+  # end
 end
