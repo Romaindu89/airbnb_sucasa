@@ -4,6 +4,14 @@ class AccommodationsController < ApplicationController
     if params[:query].present?
       @accommodations = @accommodations.where("address ILIKE ?", "%#{params[:query]}%").all
     end
+    @markers = @accommodations.geocoded.map do |accommodation|
+      {
+        lat: accommodation.latitude,
+        lng: accommodation.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {accommodation: accommodation}),
+        marker_html: render_to_string(partial: "marker", locals: {accommodation: accommodation}) # Pass the flat to the partial
+      }
+    end
   end
 
   def show
@@ -19,7 +27,7 @@ class AccommodationsController < ApplicationController
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
-      render :new, status: :unprocessable_entity
+      render new_my_accommodation_path, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +37,7 @@ class AccommodationsController < ApplicationController
     if @accommodation.update(params_accommodations)
       redirect_to my_accommodations_path
     else
-      render :edit, status: :unprocessable_entity
+      render "my/accommodations/edit", status: :unprocessable_entity
     end
   end
 

@@ -24,6 +24,7 @@ gem "devise"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "pundit"
+gem "geocoder"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -81,3 +82,5 @@ group :test do
 end
 
 gem 'faker'
+
+gem 'flatpickr'
