@@ -1,6 +1,8 @@
 require 'faker'
 require 'open-uri'
 
+Message.delete_all
+Chatroom.delete_all
 Booking.delete_all
 Accommodation.delete_all
 User.delete_all
@@ -220,3 +222,12 @@ end
 new_acco.save!
 
 puts "ultra accommodation 3 created !"
+
+puts "create a chatroom"
+
+cr = Chatroom.new(
+  name: "Plan your trip !"
+)
+cr.save
+
+puts "chatroom created !"
