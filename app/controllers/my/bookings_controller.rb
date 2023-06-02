@@ -25,7 +25,7 @@ module My
       if @booking.save
         redirect_to my_booking_path(@booking)
       else
-        render "trip/bookings/new", status: :unprocessable_entity
+        render "/accommodations/#{@accommodation.id}", status: :unprocessable_entity
       end
     end
 

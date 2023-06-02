@@ -16,6 +16,7 @@ class AccommodationsController < ApplicationController
 
   def show
     @accommodation = Accommodation.find(params[:id])
+    @booking = Booking.new
     authorize @accommodation
     @accommodations = Accommodation.all.sample(4)
   end
