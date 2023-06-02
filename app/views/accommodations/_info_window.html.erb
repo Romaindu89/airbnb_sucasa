@@ -1,6 +1,8 @@
-<%= link_to accommodation_path(accommodation) do %>
-    <h3><%= accommodation.title %></h2>
-    <h6> <i class="fa-solid fa-person"></i> <%= accommodation.nb_of_guests %> people </h6>
-    <h6><i class="fa-solid fa-dollar-sign"></i> <%= accommodation.price_per_night %>$</h6>
-    <%= cl_image_tag accommodation.photos[0].key, height: 100, width: 200, crop: :fill %>
-<% end %>
+<div class="info-map-window">
+  <%= link_to accommodation_path(accommodation), style: "outline: none;" do %>
+      <%= cl_image_tag accommodation.photos[0].key, height: 130, width: 220, crop: :fill %>
+      <h6 class="title"><%= accommodation.title %></h6>
+      <h6> <i class="fa-solid fa-person"></i> <%= accommodation.nb_of_guests %> people </h6>
+      <h6><i class="fa-solid fa-dollar-sign"></i> <%= accommodation.price_per_night %> $</h6>
+  <% end %>
+</div>
