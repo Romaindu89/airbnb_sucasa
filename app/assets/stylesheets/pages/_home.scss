@@ -44,3 +44,31 @@ element.style {
   margin-left: 88%;
   text-decoration: underline;
 }
+
+.reassurance-block {
+background-color: white;
+display: flex;
+margin-top: 30px;
+padding: 100px;
+justify-content: center;
+}
+
+.reassurance-block .fa-solid {
+  color: #ffaa64;
+  font-size: 30px;
+  margin-bottom: 15px
+}
+
+.first-elem-rea,
+.second-elem-rea,
+.third-elem-rea,
+.fourth-elem-rea {
+  text-align: center;
+  h5 {
+    font-weight: bolder;
+    color: rgb(67, 67, 67);
+  }
+  h6 {
+    color: rgb(158, 158, 158);
+  }
+}
