@@ -1,6 +1,8 @@
 require 'faker'
 require 'open-uri'
 
+Message.delete_all
+Chatroom.delete_all
 Booking.delete_all
 Accommodation.delete_all
 User.delete_all
