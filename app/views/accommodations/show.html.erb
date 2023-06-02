@@ -44,9 +44,6 @@
         </div>
       </div>
       <%# btn %>
-      <div class="btn-pp">
-        <%= link_to "Book now", new_accommodation_trip_booking_path(@accommodation), class: "btn btn-ghost" %>
-      </div>
     </div>
   </div>
 </div>
@@ -61,7 +58,7 @@
           <%= f.input :check_in_date, label: 'Choose your dates !', as: :string, input_html: { data: { flatpickr_target: "checkInDate" } } %>
           <%= f.hidden_field :check_out_date, as: :string, input_html: { data: { flatpickr_target: "checkOutDate" } } %>
           <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
-          <%= f.submit %>
+          <%= f.submit "Book now !" %>
         <% end %>
       </div>
     </div>
