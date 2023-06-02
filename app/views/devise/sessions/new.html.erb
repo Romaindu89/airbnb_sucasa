@@ -1,8 +1,10 @@
-  <div class="container-accommodation-form">
+  <div class="super-accommodation-form">
+    <div class="image-container-login">
+      <%= image_tag "maison-login.png", class: "logo-img" %>
+    </div>
     <div class="accommodation-form">
       <div class="accommodation-text">
         <h2>Log in</h2>
-
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
@@ -19,8 +21,10 @@
             <%= f.button :submit, "Log in" %>
           </div>
         <% end %>
-
+      <div class="other-links">
         <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
+<%= render 'components/footer' %>
