@@ -222,3 +222,12 @@ end
 new_acco.save!
 
 puts "ultra accommodation 3 created !"
+
+puts "create a chatroom"
+
+cr = Chatroom.new(
+  name: "Plan your trip !"
+)
+cr.save
+
+puts "chatroom created !"
