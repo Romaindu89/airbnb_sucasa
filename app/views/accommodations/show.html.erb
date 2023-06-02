@@ -57,7 +57,7 @@
           <%= f.input :check_in_date, label: 'Choose your dates !', as: :string, input_html: { data: { flatpickr_target: "checkInDate" } } %>
           <%= f.hidden_field :check_out_date, as: :string, input_html: { data: { flatpickr_target: "checkOutDate" } } %>
           <%= f.input :nb_of_guests, as: :select, collection: 1..(@accommodation.nb_of_guests), input_html: { max: @accommodation.nb_of_guests }, label: "Nombre de voyageurs" %>
-          <%= f.submit %>
+          <%= f.submit "Book now !" %>
         <% end %>
       </div>
     </div>
@@ -79,7 +79,7 @@
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= accommodation.title %></h2>
-                    <p><%= accommodation.address %></p>
+                    <p><%= accommodation.address.split.last %></p>
                   </div>
                   <div class="price">
                     <span><%= accommodation.price_per_night %></span><h2>$</h2>
