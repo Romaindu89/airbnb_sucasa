@@ -6,3 +6,91 @@
 .container-all-accommodations p {
   color: #747474;
 }
+
+.map-accommodations-lp {
+  display: flex;
+}
+
+.map-accommodations-lp .container {
+  flex: 2;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.map-container {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.map-wrapper {
+  width: 300%;
+  height: 100%;
+}
+
+.map-accommodations-lp .cards-container {
+  margin-right: 0px;
+}
+
+.map-accommodations-lp .avatar-map {
+  border: 0px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.map-accommodations-lp .avatar-map:hover {
+  color: black;
+  transition: 0.2s;
+  transform: scale3d(1.025, 1.025, 1)
+}
+
+.info-map-window a {
+  text-decoration: none;
+  color: #000000;
+  border-color: white;
+}
+
+.info-map-window{
+  border: 0px;
+}
+
+.info-map-window i{
+  color: #ffaa64;
+}
+
+.info-map-window h6{
+  font-weight: lighter;
+  margin-block-start: 1;
+  margin-block-end: 1;
+}
+
+.info-map-window .title {
+  font-weight: bolder;
+}
+
+.mapboxgl-popup-content img {
+border-radius: 0px;
+}
+
+
+element.style {
+  max-width: 240px;
+  transform: translate(-50%, 0px) translate(188px, 243px);
+}
+
+.mapboxgl-popup-close-button:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.mapboxgl-popup-close-button {
+  color: rgb(126, 126, 126);
+  background-color: transparent;
+}
+
+
+.mapboxgl-popup-content {
+  text-align: start;
+  border-radius: 15px;
+}

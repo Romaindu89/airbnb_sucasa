@@ -7,17 +7,17 @@ Booking.delete_all
 Accommodation.delete_all
 User.delete_all
 
-picture1 = "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg"
-picture2 = "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg"
-picture3 = "https://www.lesarcsagence.com/UserFiles/File/Annuaire/annuaire_produits/10/20230404113837_0000030008_01.jpg"
-picture4 = "https://parisdesignagenda.com/wp-content/uploads/2018/05/Interior-Design-Projects-Arty-Chic-Appartment-in-Paris-by-PFB-Design-5-1.jpg"
-picture5 = "https://s42814.pcdn.co/wp-content/uploads/2020/09/iStock_185930591-scaled.jpg.optimal.jpg"
-picture6 = "https://pictures.lodgix.com/media/gallery/property-75953/i018511_preview.jpg"
-picture7 = "https://www.vrbo.com/vacation-ideas/wp-content/uploads/0Bu5ExcClizeeLLxT0tiB/999893b65383b25aa67e28e82dd53519/1c1d81b0-162b-4f81-a742-271cd4e64204.lg1.jpg"
+picture1 = "https://a0.muscache.com/im/pictures/9b1faeae-d151-42ea-a498-18d9db4afe4b.jpg?im_w=1200"
+picture2 = "https://a0.muscache.com/im/pictures/bb9ebad6-6048-41a8-8947-555d6527b94f.jpg?im_w=1200"
+picture3 = "https://a0.muscache.com/im/pictures/miso/Hosting-534484668691956237/original/c592b1eb-8f33-432d-a536-9c29906dd3cb.jpeg?im_w=1440"
+picture4 = "https://a0.muscache.com/im/pictures/prohost-api/Hosting-852103052054519896/original/5e197e8c-e611-4fb6-bb23-370908cbc1dc.jpeg?im_w=1200"
+picture5 = "https://a0.muscache.com/im/pictures/0d1e5797-8f47-418f-acee-475f3b9c22c0.jpg?im_w=1200"
+picture6 = "https://a0.muscache.com/im/pictures/miso/Hosting-671622319399090627/original/37e0ed75-118f-402e-95c7-2c62512acdd5.jpeg?im_w=1200"
+picture7 = "https://a0.muscache.com/im/pictures/miso/Hosting-724287706736603735/original/68e4dc6a-14f5-49dd-8f30-3f53386ac2bd.jpeg?im_w=1440"
 picture8 = "https://cdn.apartmenttherapy.info/image/upload/v1554209861/at/house%20tours%20stock%20archive/312b3933109935c5f33f6b8ec4a271669eb2d78a.jpg"
-picture9 = "https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/43/ZG_BrandGTM_0321_GettyImages-528689860-RT-ed6165.jpg"
-picture10 = "https://tatinyhouse.com/wp-content/uploads/2022/10/13-Sunshine-03.jpg"
-picture11 = "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg"
+picture9 = "https://a0.muscache.com/im/pictures/miso/Hosting-50250873/original/785842db-7736-4bde-a9cb-c649e99f50a8.jpeg?im_w=1200"
+picture10 = "https://a0.muscache.com/im/pictures/miso/Hosting-798490574765766838/original/89371196-d780-4a9c-a107-3d47e4b94451.jpeg?im_w=1200"
+picture11 = "https://a0.muscache.com/im/pictures/769cd8c2-8c91-437d-8555-57e824189c8a.jpg?im_w=1200"
 picture12 = "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 add1 = "84 Cours de la Marne, 33000 Bordeaux"
